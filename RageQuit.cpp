@@ -5,7 +5,7 @@ void RageQuit::rageQuit_onCommand()
 {
 	if (GetAsyncKeyState(VK_MENU) && *ragequit_enabled)
 	{
-		if (!gameWrapper->IsInOnlineGame() || gameWrapper->IsInReplay() || gameWrapper->IsInCustomTraining())
+		if (gameWrapper->IsInReplay() || gameWrapper->IsInCustomTraining())
 		{
 			cvarManager->log("Goodbye Cruel World!");
 			cvarManager->executeCommand("unreal_command exit;");
